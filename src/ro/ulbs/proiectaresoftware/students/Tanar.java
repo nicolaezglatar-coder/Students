@@ -1,0 +1,17 @@
+package ro.ulbs.proiectaresoftware.students;
+public class Tanar {
+    private String name;
+    private int age;
+    private String address;
+
+    public Tanar(String name, int age, String address) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + age + " " + address;
+    }
+}

@@ -1,26 +1,44 @@
 package ro.ulbs.proiectaresoftware.students;
 
+import java.util.Objects;
+
 public class Student {
-    private int numarMatricol;
+    private int nrMatricol;
     private String prenume;
     private String nume;
-    private String formatieDeStudiu;
+    private String grupa;
+    private float nota;
 
-    public Student(int numarMatricol, String prenume, String nume, String formatieDeStudiu) {
-        this.numarMatricol = numarMatricol;
+    public Student(int nrMatricol, String prenume, String nume, String grupa) {
+        this.nrMatricol = nrMatricol;
         this.prenume = prenume;
         this.nume = nume;
-        this.formatieDeStudiu = formatieDeStudiu;
+        this.grupa = grupa;
     }
 
-    public int getNumarMatricol() { return numarMatricol; }
-    public String getPrenume() { return prenume; }
-    public String getNume() { return nume; }
-    public String getFormatieDeStudiu() { return formatieDeStudiu; }
+    public int getNrMatricol() {
+        return nrMatricol;
+    }
+
+    public void setNota(float nota) {
+        this.nota = nota;
+    }
 
     @Override
     public String toString() {
-        return String.format("%-5d %-10s %-10s %-10s",
-                numarMatricol, prenume, nume, formatieDeStudiu);
+        return nrMatricol + " " + prenume + " " + nume + " " + grupa + " nota=" + nota;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Student)) return false;
+        Student s = (Student) o;
+        return nrMatricol == s.nrMatricol;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nrMatricol);
     }
 }

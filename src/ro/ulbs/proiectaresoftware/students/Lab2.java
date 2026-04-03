@@ -1,3 +1,4 @@
+package ro.ulbs.proiectaresoftware.students;
 import java.util.*;
 
 public class Lab2 {
